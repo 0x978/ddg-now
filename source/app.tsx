@@ -23,7 +23,7 @@ export default function App({}: Props) {
 
 
 	useEffect(() => {
-		fs.readFile('./token.txt', 'utf8', (err, data) => {
+		fs.readFile('./DDG_TOKEN.txt', 'utf8', (err, data) => {
 			if (err) {
 				return;
 			}
@@ -59,7 +59,7 @@ export default function App({}: Props) {
 
 
 		if(data && key){
-			fs.writeFile("token.txt", key, (err) => {
+			fs.writeFile("./DDG_TOKEN.txt", key, (err) => {
 				if (err)
 					return
 				else {
@@ -87,7 +87,7 @@ export default function App({}: Props) {
 					{didSaveToken &&
 						<>
 							<Newline/>
-							<Text color={"#5fff00"}>Your token has been saved, such that next time you will not need to enter it.</Text>
+							<Text color={"#5fff00"}>Your token has been saved in the current directory, such that next time you run ddg-now from this directory, you will not need to enter it.</Text>
 							<Newline/>
 						</>
 					}
@@ -118,7 +118,7 @@ export default function App({}: Props) {
 					<Newline/>
 					<Text color={"#1fbbb5"}>Step 7) Ensure your token you copied starts with "Bearer", followed by a long string of characters.</Text>
 					<Newline/>
-					<Text color={"#3eff00"}>Step 8) Now that your key is copied, press <Text color={"#53caf5"}>ENTER</Text> to return.</Text>
+					<Text color={"#3eff00"}>Step 8) Now that your key is copied, press <Text color={"#53caf5"}>ANY KEY</Text> to return.</Text>
 					<Newline/>
 
 					<TextInput value={key} onChange={() => setStepsMode(false)} onSubmit={() => setStepsMode(false)}/>
