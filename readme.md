@@ -6,11 +6,24 @@ This is an alternative to the [Extension by Duck Duck Go](https://duckduckgo.com
 change your default search engine to Duck Duck Go, unlike the extension.
 
 # Installation
+### Via NPM
+npm install -g ddg-now
+
+### Or install manually
 1) Clone the project
 2) cd into dir
 3) run `npm install` in dir
 4) run `npm run build` in the dir
-5) run `ddg-now` on the command-line whenever you need an email.
 
-# Screen shot
-![img.png](img.png)
+# Running
+Open your terminal and run `ddg-now`
+
+For the first time running, you will need to provide your DDG key, if you don't know this, follow the instructions in app.
+
+# Issues
+If any issues occur when running, update Node.js.
+
+If you have done this and the issue remains, [Open a Github Issue](https://github.com/0x978/ddg-now/issues)
+
+# Example
+![image](https://cdn.upload.systems/uploads/THiVRNnv.gif)
