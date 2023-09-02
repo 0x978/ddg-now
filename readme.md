@@ -20,10 +20,15 @@ Open your terminal and run `ddg-now`
 
 For the first time running, you will need to provide your DDG key, if you don't know this, follow the instructions in app.
 
+# Tech
+This was created with [ink](https://github.com/vadimdemedes/ink) which brings react syntax to CLI apps
+#### Couldn't you just use Python or something?
+Yes
+
 # Issues
 If any issues occur when running, update Node.js.
 
-If you have done this and the issue remains, [Open a Github Issue](https://github.com/0x978/ddg-now/issues)
+If you have done this and the issue remains, [Open a GitHub Issue](https://github.com/0x978/ddg-now/issues)
 
 # Example
 ![image](https://cdn.upload.systems/uploads/THiVRNnv.gif)
