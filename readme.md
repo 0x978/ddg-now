@@ -7,7 +7,7 @@ change your default search engine to Duck Duck Go, unlike the extension.
 
 # Installation
 ### Via NPM
-npm install -g ddg-now
+`npm install -g ddg-now`
 
 ### Or install manually
 1) Clone the project
