@@ -7,10 +7,12 @@ import Link from 'ink-link';
 import clipboard from "clipboardy";
 import * as fs from "fs";
 
-type Props = {};
+type Props = {
+	resetKey:boolean
+};
 
 
-export default function App({}: Props) {
+export default function App({resetKey}: Props) {
 	const [key, setKey] = useState<string>("")
 	const [email, setEmail] = useState<string>("")
 	const [stepsMode,setStepsMode] = useState<boolean>(false)
@@ -21,8 +23,8 @@ export default function App({}: Props) {
 
 
 
-
 	useEffect(() => {
+		if(resetKey){return}
 		fs.readFile('./DDG_TOKEN.txt', 'utf8', (err, data) => {
 			if (err) {
 				return;
@@ -34,8 +36,8 @@ export default function App({}: Props) {
 	},[])
 
 
-	async function fetchEmail(skipKeyCheck?:boolean,keyBypass?:string) {
-		if(key === "" && !skipKeyCheck){
+	async function fetchEmail(autoKey?:boolean,keyBypass?:string) {
+		if(key === "" && !autoKey){
 			setStepsMode(true)
 			return
 		}
@@ -79,7 +81,8 @@ export default function App({}: Props) {
 
 					{!skip &&
 						<>
-							<Text color={"#9b0303"}>Please enter your Bearer Token. Leave blank and press <Text color={"#53caf5"}>ENTER</Text> if you do not know how to get your token.</Text>
+							{resetKey && <Text color={"#13e613"}>Key Reset Activated. Ctrl+C now to cancel key reset, otherwise, proceed with entering your new key.</Text>}
+							<Text color={"#e54747"}>Please enter your Bearer Token. Leave blank and press <Text color={"#53caf5"}>ENTER</Text> if you do not know how to get your token.</Text>
 							<TextInput value={key} onChange={setKey} onSubmit={() => fetchEmail(false)}/>
 						</>
 					}
@@ -95,7 +98,6 @@ export default function App({}: Props) {
 					{isSuccess && <Text color={"#5fff00"}>An email, {email} has been copied to your clipboard</Text>}
 
 					{isFail && <Text color={"#9b0303"}>Fatal Error Occurred when fetching email. Please ensure key is correct.</Text>}
-
 
 				</>
 				:
