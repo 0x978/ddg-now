@@ -20,6 +20,11 @@ Open your terminal and run `ddg-now`
 
 For the first time running, you will need to provide your DDG key, if you don't know this, follow the instructions in app.
 
+# Reset Key
+To run ddg-now and also reset the saved key, run `ddg-now` with the parameter `resetKey`
+
+i.e. `ddg-now --resetKey`
+
 # Tech
 This was created with [ink](https://github.com/vadimdemedes/ink) which brings react syntax to CLI apps
 #### Couldn't you just use Python or something?
